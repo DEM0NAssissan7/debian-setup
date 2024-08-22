@@ -12,11 +12,11 @@ Currently, the only supported system for this script is **Debian 12 (Bookworm) w
 # Instructions
 Run the following in a command line shell:
 
-`/bin/sudo /usr/bin/python3 "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
+`/bin/sudo /usr/bin/python3 -c "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
 
 If that does not work, try:
 
-`/bin/sudo /usr/bin/python3 "$(curl -fsSL https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
+`/bin/sudo /usr/bin/python3 -c "$(curl -fsSL https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
 
 #### Be Advised: This script NEEDS administrator privileges in order to run
 
