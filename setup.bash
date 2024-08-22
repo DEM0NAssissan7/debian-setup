@@ -116,8 +116,9 @@ function install_chrome_pkg {
 function install_apps {
 
     # Chrome
-    echo_section_title "Google Chrome EULA"
-    ask_prompt "Do you accept Google Chrome's terms of service? (https://policies.google.com/terms) (https://www.google.com/chrome/terms/)" install_chrome_pkg echo n
+    echo_section_title "Google Chrome"
+    echo "Google Chrome terms of service: https://policies.google.com/terms https://www.google.com/chrome/terms"
+    ask_prompt "Would you like to install Google Chrome? By answering yes, you automatically agree to its terms of service." install_chrome_pkg echo n
 
     # VLC
     echo_section_title "Installing VLC"
