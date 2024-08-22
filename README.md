@@ -9,14 +9,14 @@ Currently, the only supported system for this script is **Debian 12 (Bookworm) w
 - **KDE Plasma**
 - **Standard System Utilities**
 
-# How To Run
+# Instructions
 Run the following in a command line shell:
 
-`/bin/sudo /bin/bash -c "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
+`/bin/sudo /usr/bin/python3 "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
 
 If that does not work, try:
 
-`/bin/sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
+`/bin/sudo /usr/bin/python3 "$(curl -fsSL https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.py)"`
 
 #### Be Advised: This script NEEDS administrator privileges in order to run
 
@@ -31,3 +31,6 @@ Among the services and applications installed include:
 All services installed are configured sanely out of the box, and almost zero setup is required. This script is totally hands-off (except for accepting the Google Chrome EULA).
 
 More services and configurations are coming (like making Flatpak default in Discover).
+
+# TODO
+- Port script to python instead of bash for better scalability
