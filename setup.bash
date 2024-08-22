@@ -111,6 +111,7 @@ function install_chrome_pkg {
     chrome_pkg="google-chrome-stable_current_amd64.deb"
     wget https://dl.google.com/linux/direct/$chrome_pkg
     apt_install ./$chrome_pkg
+    echo "Cleaning $PWD/$chrome_pkg"
     rm $chrome_pkg
 }
 function install_apps {
