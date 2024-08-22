@@ -24,6 +24,7 @@ function add_service {
 }
 function show_installed_services {
     printf "Installed services:$services"
+    echo
 }
 function apt_install {
     apt install --assume-yes $@
