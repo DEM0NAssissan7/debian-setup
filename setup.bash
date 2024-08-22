@@ -98,7 +98,6 @@ function setup_zram {
     service zramswap reload
 }
 function setup_system {
-    echo_section_title "Setting up system services"
     setup_flatpak
     setup_pipewire
     setup_zram
@@ -110,15 +109,15 @@ function install_chrome_pkg {
     add_service "Google Chrome"
 
     chrome_pkg="google-chrome-stable_current_amd64.deb"
-    echo_section_title "Installing Google Chrome"
     wget https://dl.google.com/linux/direct/$chrome_pkg
     apt_install ./$chrome_pkg
 }
 function install_apps {
-    echo_section_title "Installing Applications"
 
+    # Chrome
     ask_prompt "Do you accept Google Chrome's terms of service? (https://policies.google.com/terms) (https://www.google.com/chrome/terms/)" install_chrome_pkg echo n
 
+    # VLC
     echo_section_title "Installing VLC"
     add_service "VLC Media Player"
     apt_install vlc
