@@ -84,7 +84,7 @@ function setup_pipewire {
     echo_section_title "Setting up Pipewire & Wireplumber"
     add_service "Pipewire, Wireplumber"
 
-    apt install wireplumber pipewire-pulse pipewire-alsa pipewire-jack
+    apt_install wireplumber pipewire-pulse pipewire-alsa pipewire-jack
     systemctl --user --now enable pipewire-pulse wireplumber
 }
 function setup_zram {
