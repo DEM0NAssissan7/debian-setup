@@ -31,6 +31,3 @@ Among the services and applications installed include:
 All services installed are configured sanely out of the box, and almost zero setup is required. This script is totally hands-off (except for accepting the Google Chrome EULA).
 
 More services and configurations are coming (like making Flatpak default in Discover).
-
-# TODO
-- Port script to python instead of bash for better scalability
