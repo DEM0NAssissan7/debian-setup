@@ -193,7 +193,7 @@ Task("Command Not Found", Category.PACKAGE,"""
             apt update
             """)
 Task("Pipewire w/ Wireplumber", Category.PACKAGE,
-            "apt install wireplumber pipewire-pulse pipewire-alsa pipewire-jack",
+            "apt install pipewire-audio pipewire-jack",
             reboot=True)
 Task("VLC", Category.APP,
             "apt install vlc")
