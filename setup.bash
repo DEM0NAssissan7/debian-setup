@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Debian KDE Setup Script: Setup all the goodies for a fresh install of Debian KDE
-# This script will setup Flatpak, Pipewire & Wireplumber, and other things.
-
-# Prereq: In tasksel, select [Debian Desktop Environment], [KDE Plasma], [Basic system utilities]
-
 function check_root {
     if [ $UID != 0 ]; then
         echo "This script must be run as root."
@@ -73,6 +68,7 @@ function ask_prompt {
 system_type="plasma"
 function prompt_system_type {
     read -p "Warning: only KDE Plasma is officially supported at this time [press ENTER to acknowledge]"
+
 }
 
 # System setup
