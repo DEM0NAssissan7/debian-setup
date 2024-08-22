@@ -69,6 +69,12 @@ function ask_prompt {
     fi
 }
 
+# Script pre-configuration
+system_type
+function prompt_system_type {
+    read -p "Warning"
+}
+
 # System setup
 function setup_flatpak {
     # Copied from https://flatpak.org/setup/Debian
