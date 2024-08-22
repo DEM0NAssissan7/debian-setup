@@ -70,9 +70,9 @@ function ask_prompt {
 }
 
 # Script pre-configuration
-system_type
+system_type="plasma"
 function prompt_system_type {
-    read -p "Warning"
+    read -p "Warning: only KDE Plasma is officially supported at this time [press ENTER to acknowledge]"
 }
 
 # System setup
