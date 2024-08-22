@@ -134,6 +134,7 @@ function exit_setup {
         exit
 }
 function prompt_reboot {
+    echo
     ask_prompt "Would you like to reboot your computer to complete the setup?" reboot_system exit_setup
 }
 function conclude_install {
