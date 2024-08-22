@@ -13,6 +13,11 @@ Currently, the only supported system for this script is **Debian 12 (Bookworm) w
 Run the following in a command line shell:
 
 `/bin/sudo /bin/bash -c "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
+
+If that does not work, try:
+
+`/bin/sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
+
 #### Be Advised: This script NEEDS administrator privileges in order to run
 
 # Services
