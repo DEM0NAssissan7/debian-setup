@@ -86,7 +86,6 @@ function setup_pipewire {
     add_service "Pipewire, Wireplumber"
 
     apt_install wireplumber pipewire-pulse pipewire-alsa pipewire-jack
-    systemctl --user --now enable pipewire-pulse wireplumber
 }
 function setup_zram {
     # Taken from https://wiki.debian.org/ZRam
