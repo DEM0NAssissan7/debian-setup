@@ -20,7 +20,7 @@ function echo_section_title {
 }
 services=""
 function add_service {
-    services="$services\n   $@"
+    services="$services\n   * $@"
 }
 function show_installed_services {
     printf "Installed services:$services"
@@ -116,6 +116,7 @@ function install_chrome_pkg {
 function install_apps {
 
     # Chrome
+    echo_section_title "Google Chrome EULA"
     ask_prompt "Do you accept Google Chrome's terms of service? (https://policies.google.com/terms) (https://www.google.com/chrome/terms/)" install_chrome_pkg echo n
 
     # VLC
