@@ -56,9 +56,9 @@ function ask_prompt {
     read -p "$message $p: " input
     if [ -z $input ]; then
         $default
-    elif [ $input == "y" -o $input == "Y" ]; then
+    elif [ ${input,,} == "y" -o ${input,,} == "yes" ]; then
         $yes
-    elif [ $input == "n" -o $input == "N" ]; then
+    elif [ ${input,,} == "n" -o ${input,,} == "no" ]; then
         $no
     else
         ask_prompt $@
