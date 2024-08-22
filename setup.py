@@ -206,7 +206,7 @@ Task("Google Chrome", Category.APP,"""
 
             chrome_pkg="google-chrome-stable_current_amd64.deb"
             wget https://dl.google.com/linux/direct/$chrome_pkg
-            apt_install ./$chrome_pkg
+            apt install ./$chrome_pkg
             echo "Cleaning $PWD/$chrome_pkg"
             rm $chrome_pkg
             """, selected=False)
