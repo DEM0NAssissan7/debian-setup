@@ -121,6 +121,8 @@ def show_prompt_info():
     print("To enable all tasks, input 'e'")
     print("To disable all tasks, input 'd'")
     print()
+    print("To QUIT, input 'q'")
+    print()
 
 def prompt_task_selection():
     show_prompt_info()
@@ -134,6 +136,9 @@ def prompt_task_selection():
             for task in tasks:
                 task.disable()
             show_prompt_info()
+        elif "q" in i:
+            quit_program()
+            break
         elif "i" in i:
             break
         else:
@@ -156,6 +161,8 @@ def finalize():
     new_section("Tasks completed!")
     if system_needs_reboot == True:
         prompt_reboot()
+
+def quit_program():
     for i in range(5):
         print()
     print("Exiting...")
@@ -204,3 +211,4 @@ prompt_task_selection()
 # After user made selection
 run_selected_tasks()
 finalize()
+quit_program()
