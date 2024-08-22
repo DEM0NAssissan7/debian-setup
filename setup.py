@@ -73,6 +73,7 @@ class Task:
         self.pretty_category = get_pretty_category(self.category)
         self.script = script
         self.reboot = kwargs.get("reboot", False)
+        self.selected = kwargs.get("selected", True)
         tasks.append(self)
 
     def run(self):
@@ -205,7 +206,7 @@ Task("Google Chrome", Category.APP,"""
             apt_install ./$chrome_pkg
             echo "Cleaning $PWD/$chrome_pkg"
             rm $chrome_pkg
-            """)
+            """, selected=False)
 
 prompt_task_selection()
 # After user made selection
