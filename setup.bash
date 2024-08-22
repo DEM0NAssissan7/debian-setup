@@ -10,6 +10,10 @@ function check_root {
 
 check_root
 
+# Warn of script deprication
+echo "WARNING: This script is depricated. Please use 'setup.py' instead."
+read -p "Press [ENTER] to continue or press [CTRL+C] to quit: "
+
 # General functions
 function echo_section_title {
     echo
@@ -30,7 +34,7 @@ function apt_install {
     apt install --assume-yes $@
 }
 function flatpak_install {
-    flatpak install -y $@
+    flatpak install $@
 }
 function ask_prompt {
     # Argument 1: Message
@@ -66,10 +70,15 @@ function ask_prompt {
 }
 
 # Script pre-configuration
-system_type="plasma"
-function prompt_system_type {
-    read -p "Warning: only KDE Plasma is officially supported at this time [press ENTER to acknowledge]"
+function find_system_type {
+    distro=`lsb_release -i`
+    release=`lsb_release -r`
+    desktop=$DESKTOP_SESSION
 
+    is_supported=
+
+    if []
+    read -p "Warning: only Debian 12 w/ KDE Plasma is officially supported at this time (press [ENTER] to continue or [CTRL+C] to quit): "
 }
 
 # System setup
