@@ -11,6 +11,7 @@ Currently, the only supported system for this script is **Debian 12 (Bookworm) w
 
 # How To Run
 Run the following in a command line shell:
+
 `/bin/sudo /bin/bash -c "$(wget -q -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
 #### Be Advised: This script NEEDS administrator privileges in order to run
 
