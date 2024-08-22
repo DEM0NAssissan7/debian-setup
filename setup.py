@@ -179,11 +179,10 @@ def prompt_reboot():
 # System information collector
 # We need to collect certain, very basic system information in order to
 # properly determine which packages to install
-Task("Flatpak", Category.PACKAGE,
-            "apt install flatpak plasma-discover-backend-flatpak")
-Task("Flathub Setup", Category.SERVICE,
-            "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo",
-            reboot=True)
+Task("Flatpak w/ Flathub", Category.PACKAGE,"""
+            apt install flatpak plasma-discover-backend-flatpak
+            flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+            """, reboot=True)
 Task("ZRAM", Category.SERVICE, """
             apt install zram-tools
             echo -e "ALGO=zstd\nPERCENT=50\nPRIORITY=100" | tee -a /etc/default/zramswap
