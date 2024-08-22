@@ -189,6 +189,10 @@ Task("ZRAM", Category.SERVICE, """
             echo -e "ALGO=zstd\nPERCENT=50\nPRIORITY=100" | tee -a /etc/default/zramswap
             service zramswap reload
             """)
+Task("Command Not Found", Category.PACKAGE,"""
+            apt install command-not-found
+            apt update
+            """)
 Task("Pipewire w/ Wireplumber", Category.PACKAGE,
             "apt install wireplumber pipewire-pulse pipewire-alsa pipewire-jack",
             reboot=True)
