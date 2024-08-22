@@ -2,7 +2,7 @@
 This script's primary goal is to extend already existing Debian features to the Debian desktop to make an extremely capable workstation setup.
 
 # How To Run
-`/bin/sudo /bin/bash -c "$(wget -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash)"`
+`/bin/sudo /bin/bash -c "$(wget -O - https://raw.githubusercontent.com/DEM0NAssissan7/debian-setup/main/setup.bash 2>/dev/null)"`
 - Be Advised: This script NEEDS administrator priveleges in order to run
 
 # Services
