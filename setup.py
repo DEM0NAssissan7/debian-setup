@@ -109,7 +109,7 @@ class Task:
         tasks.append(self)
 
     def run(self):
-        new_section("Installing " + self.pretty_category + " " + self.name + "...")
+        new_section("Installing " + self.name + " (" + self.pretty_category + ")...")
         subprocess.run(bash_functions + self.script, shell=True, executable="/bin/bash")
         # If a service needs to reboot, we prompt the user at the end to reboot if they want
         global system_needs_reboot
