@@ -58,6 +58,38 @@ bash_functions = """
 function apt {
     /usr/bin/apt --assume-yes $@
 }
+function ask_prompt {
+    # Argument 1: Message
+    # Argument 2: If yes (function name)
+    # 3: If no (function name)
+    # 4: Default
+
+    message=$1
+    yes=$2
+    no=$3
+
+    default=$yes
+    p="[Y/n]"
+
+    if [ -z $4 ]; then
+        true
+    elif [ $4 == "n" ]; then
+        default=$no
+        p="[y/N]"
+    fi
+
+
+    read -p "$message $p: " input
+    if [ -z $input ]; then
+        $default
+    elif [ ${input,,} == "y" -o ${input,,} == "yes" ]; then
+        $yes
+    elif [ ${input,,} == "n" -o ${input,,} == "no" ]; then
+        $no
+    else
+        ask_prompt $@
+    fi
+}
 
 """
 system_needs_reboot=False
@@ -202,7 +234,7 @@ Task("VLC", Category.APP,
 Task("Google Chrome", Category.APP,"""
             echo "Google Chrome terms of service: https://policies.google.com/terms https://www.google.com/chrome/terms"
             echo "Would you like to install Google Chrome? By installing Google Chrome, you agree to its terms of service."
-            read -p "To install Google Chrome, press [ENTER]. Otherwise, press [CTRL+C]: "
+            ask_prompt "Do you want to install Google Chrome?" true exit
 
             chrome_pkg="google-chrome-stable_current_amd64.deb"
             wget https://dl.google.com/linux/direct/$chrome_pkg
