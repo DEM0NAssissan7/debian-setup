@@ -185,7 +185,7 @@ Task("Flatpak w/ Flathub", Category.PACKAGE,"""
             """, reboot=True)
 Task("ZRAM", Category.SERVICE, """
             apt install zram-tools
-            echo -e "ALGO=zstd\nPERCENT=50\nPRIORITY=100" | tee -a /etc/default/zramswap
+            echo -e "ALGO=zstd\nPERCENT=65\nPRIORITY=100" | tee -a /etc/default/zramswap
             service zramswap reload
             """)
 Task("Command Not Found", Category.PACKAGE,"""
