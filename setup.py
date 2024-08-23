@@ -3,6 +3,9 @@ from enum import Enum
 
 import subprocess
 import os
+import tty
+import sys
+import termios
 
 # Ensure the program has root permissions
 if os.getuid() != 0:
@@ -147,20 +150,24 @@ def show_prompt_info():
     print("Tasks:")
     show_tasks()
     print()
-    print("Enter number (e.g '1' or '2') to toggle selection")
+    print("Enter number (e.g '1' or '2') to toggle associated selection")
     print()
-    print("You may specify multiple tasks separated by a space (e.g. '1 2 5 6')")
+    print("To enable all tasks, press 'e'")
+    print("To disable all tasks, press 'd'")
     print()
-    print("To enable all tasks, input 'e'")
-    print("To disable all tasks, input 'd'")
-    print()
-    print("To QUIT, input 'q'")
+    print("To begin installation, press [ENTER]")
+    print("To QUIT, press 'q'")
     print()
 
 def prompt_task_selection():
     show_prompt_info()
-    while True:
-        i = input("Selection (or type 'i' to begin setup): ").lower()
+    orig_settings = termios.tcgetattr(sys.stdin)
+
+    tty.setcbreak(sys.stdin)
+    global i
+    i=0
+    while i != chr(13): # Enter
+        i=sys.stdin.read(1)[0]
         if "e" in i:
             for task in tasks:
                 task.enable()
@@ -172,7 +179,7 @@ def prompt_task_selection():
         elif "q" in i:
             quit_program()
             break
-        elif "i" in i:
+        elif '\n' in i:
             break
         else:
             i = i.split(" ")
@@ -182,6 +189,7 @@ def prompt_task_selection():
                 show_prompt_info()
             except:
                 continue
+    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, orig_settings)
 
 def run_selected_tasks():
     for task in tasks:
