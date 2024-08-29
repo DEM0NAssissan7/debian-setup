@@ -228,7 +228,8 @@ Task("Pipewire w/ Wireplumber", Category.PACKAGE,
             "apt install pipewire-audio pipewire-jack",
             reboot=True)
 Task("VLC", Category.APP,
-            "apt install vlc")
+            "apt install vlc",
+            selected=False)
 Task("mpv", Category.APP,
             "apt install mpv")
 
