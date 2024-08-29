@@ -160,7 +160,7 @@ def show_prompt_info():
 def prompt_task_selection():
     show_prompt_info()
     while True:
-        i = input("Selection (or type 'i' to begin setup): ").lower()
+        i = input("Selection (or type 'i' to begin installation): ").lower()
         if "e" in i:
             for task in tasks:
                 task.enable()
