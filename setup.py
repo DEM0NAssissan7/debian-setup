@@ -58,6 +58,9 @@ bash_functions = """
 function apt {
     /usr/bin/apt --assume-yes $@
 }
+function flatpak {
+    /usr/bin/flatpak -y $@
+}
 function ask_prompt {
     # Argument 1: Message
     # Argument 2: If yes (function name)
