@@ -234,6 +234,27 @@ Task("Command Not Found", Category.PACKAGE,"""
 Task("Pipewire w/ Wireplumber", Category.PACKAGE,
             "apt install pipewire-audio pipewire-jack",
             reboot=True)
+
+# Scripts
+Task("KDE Debloat", Category.SCRIPT, """
+            apps=
+
+            function rmpkg {
+                apps="$apps $@"
+            }
+            # Libreoffice
+            
+            rmpkg libreoffice-*
+            
+            # Random KDE apps
+            rmpkg kontrast 
+     
+            apt remove $apps
+            apt autoremove
+            apt autoclean
+""", selected=False)
+
+# Apps
 Task("VLC", Category.APP,
             "apt install vlc",
             selected=False)
