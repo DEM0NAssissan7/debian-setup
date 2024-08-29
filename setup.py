@@ -229,6 +229,8 @@ Task("Pipewire w/ Wireplumber", Category.PACKAGE,
             reboot=True)
 Task("VLC", Category.APP,
             "apt install vlc")
+Task("mpv", Category.APP,
+            "apt install mpv")
 
 # Controversial
 Task("Google Chrome", Category.APP,"""
