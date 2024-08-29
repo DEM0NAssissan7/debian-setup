@@ -41,6 +41,7 @@ class Category(Enum):
     PACKAGE=1
     FLATPAK=2
     APP=3
+    TOOL=4
 
 def get_pretty_category(category):
     switcher = {
@@ -48,6 +49,7 @@ def get_pretty_category(category):
         1: "package",
         2: "flatpak",
         3: "application",
+        4: "tool"
     }
 
     return switcher.get(category, "NO TASK CATEGORY FOUND. RUNNING TASK")
