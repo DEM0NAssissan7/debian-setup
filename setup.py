@@ -239,6 +239,9 @@ Task("mpv", Category.APP,
             "apt install mpv")
 
 # Controversial
+Task("OnlyOffice", Category.FLATPAK,
+            "flatpak install app/org.onlyoffice.desktopeditors/x86_64/stable",
+            selected=False)
 Task("Google Chrome", Category.APP,"""
             echo "Google Chrome terms of service: https://policies.google.com/terms https://www.google.com/chrome/terms"
             echo "Would you like to install Google Chrome? By installing Google Chrome, you agree to its terms of service."
